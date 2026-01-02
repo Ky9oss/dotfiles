@@ -1,0 +1,8 @@
+anticache: true
+listen_port: 19999
+block_list:
+- '|~d gvt2.com|444'
+- '|~d gvt3.com|444'
+- '|~d gvt4.com|444'
+- '|~d adblockplus.org|444'
+- '|~d gstatic.com|444'
