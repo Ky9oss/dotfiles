@@ -1,8 +1,18 @@
 -- Pull in the wezterm API
 local wezterm = require 'wezterm'
-
--- This will hold the configuration.
+local mux = wezterm.mux
 local config = wezterm.config_builder()
+
+-- Maximize
+wezterm.on('gui-attached', function(domain)
+  -- maximize all displayed windows on startup
+  local workspace = mux.get_active_workspace()
+  for _, window in ipairs(mux.all_windows()) do
+    if window:get_workspace() == workspace then
+      window:gui_window():maximize()
+    end
+  end
+end)
 
 -- changing the initial geometry for new windows:
 -- config.initial_cols = 120
@@ -19,7 +29,7 @@ config.color_scheme = 'Tokyo Night'
 -- config.background = {
 --   {
 --     source = {
---       File = "xxx",
+--       File = "",
 --     },
 --     width = "100%",
 --     height = "100%",
@@ -35,7 +45,7 @@ config.color_scheme = 'Tokyo Night'
 -- }
 
 -- Launch
-config.default_prog = { 'ssh.exe', 'xxx@127.0.0.1', '-p', 'xxx' }
+config.default_prog = { 'ssh.exe', 'ky9oss@127.0.0.1', '-p', '27777' }
 
 -- Tab bar
 config.use_fancy_tab_bar = true
@@ -73,3 +83,4 @@ config.force_reverse_video_cursor = true
 
 -- Finally, return the configuration to wezterm:
 return config
+
