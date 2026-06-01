@@ -61,7 +61,7 @@ config.command_palette_font_size = 12.0
 config.command_palette_bg_color = '#1a1b26'
 
 -- Bell
--- config.audible_bell = "SystemBeep"
+config.audible_bell = "Disabled" -- SystemBeep
 -- config.visual_bell = {
 --   fade_in_function = "EaseIn",
 --   fade_out_function = "EaseOut",
