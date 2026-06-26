@@ -19,7 +19,9 @@ end)
 -- config.initial_rows = 28
 
 -- Font
-config.font_size = 12
+config.font_size = 14.5
+config.line_height = 1.08
+config.cell_width = 1.0
 config.font = wezterm.font 'Hack Nerd Font'
 
 -- Theme
